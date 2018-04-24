@@ -25,3 +25,10 @@ typedef struct		s_tools
 	int			prev_y;
 	char			*altitude;
 }                 t_tools;
+
+typedef struct		s_env
+{
+	t_tools			t_tools;
+	t_links			*links;
+	t_rotation		*rot;
+}

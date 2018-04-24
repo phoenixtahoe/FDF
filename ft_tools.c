@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 16:37:01 by pdavid            #+#    #+#             */
-/*   Updated: 2018/04/23 16:40:55 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/04/23 18:09:20 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ void		ft_directions(t_env *all)
 	terminal = ft_find_window(all);
 	while (init->next)
 	{
-		if 
+		if (terminal->next != NULL && (terminal->next->x > terminal->x))
+			draw(init, terminal, all);
+		if (terminal->next->x < init->x && terminal->next != NULL)
+			draw(init, terminal, all);
 	}
 }
 
