@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 16:37:01 by pdavid            #+#    #+#             */
-/*   Updated: 2018/04/23 18:09:20 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/01 12:28:00 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ void		ft_directions(t_env *all)
 	while (init->next)
 	{
 		if (terminal->next != NULL && (terminal->next->x > terminal->x))
-			draw(init, terminal, all);
+			ft_paint(init, terminal, all);
 		if (terminal->next->x < init->x && terminal->next != NULL)
-			draw(init, terminal, all);
+			ft_paint(init, terminal, all);
 		if (init->next && (init->next->x > init->x))
-			draw(init, init->next, all);
+			ft_paint(init, init->next, all);
 		if (init->next)
 			init = init->next;
 		if (terminal->next)
