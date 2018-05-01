@@ -15,7 +15,7 @@
 t_links		*ft_find_window(t_env *all)
 {
 	t_links *new;
-	
+
 	new = all->links;
 	while (new)
 	{
@@ -31,7 +31,7 @@ void		ft_directions(t_env *all)
 {
 	t_links *init;
 	t_links *terminal;
-	
+
 	init = all->links;
 	terminal = ft_find_window(all);
 	while (init->next)
@@ -40,10 +40,17 @@ void		ft_directions(t_env *all)
 			draw(init, terminal, all);
 		if (terminal->next->x < init->x && terminal->next != NULL)
 			draw(init, terminal, all);
+		if (init->next && (init->next->x > init->x))
+			draw(init, init->next, all);
+		if (init->next)
+			init = init->next;
+		if (terminal->next)
+			terminal = terminal->next;
+		if (init->next && (init->next->x > init->x))
 	}
 }
 
-void		ft_quit(t_env *all)
+void		ft_exit(t_env *all)
 {
 	while (all->links);
 	{
