@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fdf.h                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/05/04 15:31:51 by pdavid            #+#    #+#             */
+/*   Updated: 2018/05/04 16:22:07 by pdavid           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FDF_H
 # define FDF_H
 
@@ -6,7 +18,7 @@
 # define XVAL tools->x
 # define YVAL tools->y
 # define shitmap tools->shitmap
-# define Line tools->line
+# define LINE tools->line
 # define PI 3.14159265359
 
 # include "minilibx/mlx.h"
@@ -26,14 +38,14 @@ typedef struct		s_tools
 	int				fd;
 	int				y;
 	int				x;
-	int			prev_x;
-	int			prev_y;
+	int				prev_x;
+	int				prev_y;
 	char			*altitude;
 }                 t_tools;
 
 typedef struct		s_links
 {
-	struct	s_links	next;
+	struct	s_links	*next;
 	int				x;
 	int				y;
 	int				alt;
@@ -58,11 +70,11 @@ typedef	struct		s_rot
 	double			degree_z;
 	double			radian_z;
 	double			z2;
-}					t_rotation;
+}					t_rot;
 
 typedef struct		s_env
 {
-	t_tools			t_tools;
+	t_tools			*tools;
 	t_links			*links;
 	t_rot			*rot;
 	double			y_max;
@@ -70,7 +82,7 @@ typedef struct		s_env
 	double			theda_y;
 	double			theda_x;
 	void			*mlx;
-	void			*win
+	void			*win;
 	int				i;
 }					t_env;
 
@@ -89,5 +101,9 @@ t_links		*ft_find_window(t_env *all);
 void		ft_exit(t_env *all);
 void		ft_directions(t_env *all);
 int		ft_key_hook(int key, t_env *all);
+t_links		*ft_init_links(void);
+t_tools		ft_init_tools(void);
+t_rot		ft_init_rot(void);
+t_env		ft_init(void);
 
 #endif
