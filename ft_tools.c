@@ -6,20 +6,21 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 16:37:01 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/01 12:31:35 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/03 19:10:14 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-t_links		*ft_find_window(t_env *all)
+/* Standard postion */
+t_links		*ft_terminal(t_env *all)
 {
 	t_links *new;
 
 	new = all->links;
 	while (new)
 	{
-		if (new-x == all->links->x && new->y == all-.links->y + 1)
+		if (new-x == all->links->x && new->y == all->links->y + 1)
 			return (new);
 		else
 			new = new->next;
