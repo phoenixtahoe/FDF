@@ -7,6 +7,7 @@
 # define YVAL tools->y
 # define shitmap tools->shitmap
 # define Line tools->line
+# define PI 3.14159265359
 
 # include "minilibx/mlx.h"
 # include <unistd.h>
@@ -40,7 +41,7 @@ typedef struct		s_links
 	double			tru_x;
 }					t_links;
 
-typedef	struct		s_rotation
+typedef	struct		s_rot
 {
 	double			x0;
 	double			x1;
@@ -66,8 +67,8 @@ typedef struct		s_env
 	t_rot			*rot;
 	double			y_max;
 	double			x_max;
-	theda_y			y;
-	theda_x			x;
+	double			theda_y;
+	double			theda_x;
 	void			*mlx;
 	void			*win
 	int				i;

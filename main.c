@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:30:25 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/03 19:19:17 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/03 19:28:59 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int   ft_parse(t_env *all, t_tools *tools, t_links *links)
 {
-  XVal++;
+  XVAL++;
   all->x_max = XVAL;
   while (Line[tools->i] == ' ')
   {
@@ -34,9 +34,9 @@ int   ft_parse(t_env *all, t_tools *tools, t_links *links)
 
 int   ft_parse_the_map(t_env *all, t_tools *tools, t_links *links, int fd)
 {
-  YVal++;
+  YVAL++;
   if (get_next_line(fd, &Line, ) > 0)
-    XVal = 0;
+    XVAL = 0;
     tools->i = 0;
     ft_parse(all, tools, links);
     if (shitmap == false)
@@ -46,7 +46,7 @@ int   ft_parse_the_map(t_env *all, t_tools *tools, t_links *links, int fd)
       ft_putstr("ERROR: BADMAP\n");
       return (0);
     }
-    all->max = YVal;
+    all->max = YVAL;
     return (0);
 }
 
