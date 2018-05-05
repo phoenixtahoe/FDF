@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 15:35:15 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/04 16:55:04 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/04 19:11:04 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ t_rot		ft_init_rot(void)
 	return (rot);
 }
 
-t_env		ft_init(void)
+t_env		*ft_init(void)
 {
 	t_env *e;
 	

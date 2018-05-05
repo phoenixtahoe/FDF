@@ -6,13 +6,13 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/03 18:54:59 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/03 18:56:40 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/04 19:12:59 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	ft_killer(t_links *head, t_rotation *rot, t_env *all)
+void	ft_killer(t_links *head, t_rot *rot, t_env *all)
 {
 	t_links *links;
 

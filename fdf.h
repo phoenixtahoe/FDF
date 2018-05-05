@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 15:31:51 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/04 16:22:07 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/04 19:13:10 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ typedef struct		s_env
 	int				i;
 }					t_env;
 
-void	ft_killer(t_links *head, t_rotation *rot, t_env *all);
+void	ft_killer(t_links *head, t_rot *rot, t_env *all);
 int   ft_parse(t_env *all, t_tools *tools, t_links *links);
 int   ft_parse_the_map(t_env *all, t_tools *tools, t_links *links, int fd);
 int   ft_check_line(t_tools *tools);
@@ -102,8 +102,8 @@ void		ft_exit(t_env *all);
 void		ft_directions(t_env *all);
 int		ft_key_hook(int key, t_env *all);
 t_links		*ft_init_links(void);
-t_tools		ft_init_tools(void);
-t_rot		ft_init_rot(void);
-t_env		ft_init(void);
+t_tools		*ft_init_tools(void);
+t_rot		*ft_init_rot(void);
+t_env		*ft_init(void);
 
 #endif
