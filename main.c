@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:30:25 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/04 16:20:56 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/04 17:14:17 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int   ft_parse(t_env *all, t_tools *tools, t_links *links)
 int   ft_parse_the_map(t_env *all, t_tools *tools, t_links *links, int fd)
 {
   YVAL++;
-  if (get_next_LINE(fd, &LINE, ) > 0)
+  if (get_next_LINE(fd, &line, ) > 0)
     XVAL = 0;
     tools->i = 0;
     ft_parse(all, tools, links);
