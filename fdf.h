@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 15:31:51 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/04 19:13:10 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/04 19:17:13 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include <stdbool.h>
 # include <math.h>
 # include "libft/libft.h"
 

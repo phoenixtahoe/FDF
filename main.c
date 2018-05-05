@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:30:25 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/04 19:14:59 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/04 19:16:17 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int   ft_parse(t_env *all, t_tools *tools, t_links *links)
     tools->i++;
 	if (LINE[tools->i] && (!ft_isdigit(LINE[tools->i])
 		&& LINE[tools->i] != '-' && LINE[tools->i] != ' '))
-      SHITMAP = true;
+      	SHITMAP = true;
   }
   if (LINE[tools->i] == '\0' || ft_create_list(links, tools) == -1)
       return (links);
