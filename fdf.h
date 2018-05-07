@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 15:31:51 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/06 17:07:20 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/06 17:37:27 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # define HEIGHT 800
 # define XVAL tools->x
 # define YVAL tools->y
-# define shitmap tools->shitmap
 # define LINE tools->line
 # define PI 3.14159265359
 
@@ -34,7 +33,7 @@ typedef	struct		s_tools
 {
 	char			*line;
 	int				i;
-	bool			shitmap;
+	int				shitmap;
 	int				fd;
 	int				y;
 	int				x;
@@ -91,6 +90,7 @@ int   ft_parse(t_env *all, t_tools *tools, t_links *links);
 int   ft_parse_the_map(t_env *all, t_tools *tools, t_links *links, int fd);
 int   ft_check_line(t_tools *tools);
 int   ft_create_list(t_links *start, t_tools *tools);
+int		ft_add_link(t_links *new, t_tools *tools);
 t_links	*ft_create_link(t_tools *tools);
 void	ft_mlx_looper(t_env *all);
 void	ft_repeat(t_env *all);

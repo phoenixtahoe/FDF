@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:31:57 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/04 16:17:24 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/06 17:36:56 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,13 @@ t_links	*ft_create_link(t_tools *tools)
 	new->altitude = ft_atoi(&(Line[tools->i]));
 	new->next = NULL;
 	return (new);
+}
+
+int		ft_add_link(t_links *new, t_tools *tools)
+{
+	while (new->next != NULL)
+		new = new->next;
+	if (!(new->next = ft_create_link(tools)))
+		return (-1);
+	return (1);
 }
