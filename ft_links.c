@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:31:57 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/06 17:36:56 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/07 09:14:01 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_links	*ft_create_link(t_tools *tools)
 		return (NULL);
 	new->x = XVAl;
 	new->y = YVAL;
-	new->altitude = ft_atoi(&(Line[tools->i]));
+	new->altitude = ft_atoi(&(LINE[tools->i]));
 	new->next = NULL;
 	return (new);
 }

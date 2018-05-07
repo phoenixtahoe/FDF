@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/01 12:32:36 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/03 19:11:29 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/07 09:12:11 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ void	ft_repeat(t_env *all)
 {
 	ft_killer(all->links, all->rot, all);
 	mlx_clear_window(all->mlx, all->win);
-	ft_directions(all;)
+	ft_directions(all);
 }
 
 
 int		ft_key_hook(int key, t_env *all)
 {
 	if (key == 53)
-		ft_quit(all);
+		ft_exit(all);
 	else if (key == 126)
 		all->rot->degree_x += 1;
 	else if (key == 124)

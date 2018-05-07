@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 15:35:15 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/04 19:11:04 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/07 09:10:01 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ t_links		*ft_init_links(void)
 	return (links);
 }
 
-t_tools		ft_init_tools(void)
+t_tools		*ft_init_tools(void)
 {
 	t_tools	*tools;
 	
 	if (!(tools = (t_tools *)malloc(sizeof(t_tools))))
 		return (NULL);
-	Line = NULL;
+	LINE = NULL;
 	tools->i = 0;
 	shitmap = false;
 	XVAL = -1;
@@ -43,7 +43,7 @@ t_tools		ft_init_tools(void)
 	return (tools);
 }
 
-t_rot		ft_init_rot(void)
+t_rot		*ft_init_rot(void)
 {
 	t_rot	*rot;
 	

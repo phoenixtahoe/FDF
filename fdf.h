@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 15:31:51 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/06 17:37:27 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/07 09:28:01 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,13 @@
 # define XVAL tools->x
 # define YVAL tools->y
 # define LINE tools->line
+# define SHITMAP tools->shitmap
 # define PI 3.14159265359
+# define TRANS_Z links->y * sin(rot->radian_x)
+# define ISVLD !ft_isdigit(LINE[i]) || LINE[i] != '-'
+# define TRANS_Y links->altitude * sin(rot->radian_x)
+# define SIN_Y sin(rot->radian_y)
+# define SIN_Z sin(rot->radian_z)
 
 # include "minilibx/mlx.h"
 # include <unistd.h>
@@ -26,25 +32,26 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <math.h>
+# include <stdbool.h>
 # include "libft/libft.h"
-
 
 typedef	struct		s_tools
 {
 	char			*line;
 	int				i;
-	int				shitmap;
+	bool			shitmap;
 	int				fd;
 	int				y;
 	int				x;
+	char			*altitude;
 	int				prev_x;
 	int				prev_y;
-	char			*altitude;
 }					t_tools;
 
 typedef struct		s_links
 {
 	struct	s_links	*next;
+	int				altitude;
 	int				x;
 	int				y;
 	int				alt;
