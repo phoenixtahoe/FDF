@@ -20,7 +20,7 @@ header = fdf.h
 
 includes = ./libft/libft.a ./minilibx/libmlx.a
 
-SRC = main.c fdf.c
+SRC = main.c ft_init.c ft_killer.c ft_mlx.c ft_tools.c ft_links.c ft_paint.c
 
 OBJ = *.o
 
