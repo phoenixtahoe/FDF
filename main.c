@@ -6,12 +6,11 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:30:25 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/07 09:28:18 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/07 11:41:30 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include <stdbool.h>
 
 int   ft_check_line(t_tools *tools)
 {
@@ -37,30 +36,31 @@ int   ft_create_list(t_links *start, t_tools *tools)
   return (ft_check_line(tools) ? 1 : -1);
 }
 
-int   ft_parse(t_env *all, t_tools *tools, t_links *links)
+t_links   *ft_parse(t_env *all, t_tools *tools, t_links *links)
 {
-  XVAL++;
-  all->x_max = (double)XVAL;
-  while (LINE[tools->i] == ' ')
-  {
-    tools->i++;
-	if (LINE[tools->i] && (!ft_isdigit(LINE[tools->i])
-		&& LINE[tools->i] != '-' && LINE[tools->i] != ' '))
-      	SHITMAP = true;
-  }
-  if (LINE[tools->i] == '\0' || ft_create_list(links, tools) == -1)
-      return (links);
-  else
-      while (LINE[tools->i] && (ft_isdigit(LINE[tools->i])
-          || LINE[tools->i] == '-'))
-        tools->i++;
-  return (ft_parse(all, tools, links));
+	XVAL++;
+	all->x_max = (double)XVAL;
+	while (LINE[tools->i] == ' ')
+	{
+		tools->i++;
+		if (LINE[tools->i] && (!ft_isdigit(LINE[tools->i])
+			&& LINE[tools->i] != '-' && LINE[tools->i] != ' '))
+			SHITMAP = true;
+	}
+	if (LINE[tools->i] == '\0' || ft_create_list(links, tools) == -1)
+		return (links);
+	else
+		while (LINE[tools->i] &&
+			(ft_isdigit(LINE[tools->i]) || LINE[tools->i] == '-'))
+			tools->i++;
+	return (ft_parse(all, tools, links));
 }
 
 int   ft_parse_the_map(t_env *all, t_tools *tools, t_links *links, int fd)
 {
   YVAL++;
   if (get_next_line(fd, &LINE) > 0)
+	{
     XVAL = 0;
     tools->i = 0;
     ft_parse(all, tools, links);
@@ -72,6 +72,7 @@ int   ft_parse_the_map(t_env *all, t_tools *tools, t_links *links, int fd)
       ft_putstr("ERROR: BADMAP\n");
       return (0);
     }
+	}
     all->y_max = (double)YVAL;
     return (1);
 }

@@ -6,13 +6,25 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 16:37:01 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/07 09:13:38 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/07 11:40:02 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-/* Standard postion */
+t_links		*ft_create_link(t_tools *tools)
+{
+	t_links	*new;
+
+	if (!(new = (t_links *)malloc(sizeof(t_links))))
+		return (NULL);
+	new->x = XVAL;
+	new->y = YVAL;
+	new->altitude = ft_atoi(&(LINE[tools->i]));
+	new->next = NULL;
+	return (new);
+}
+
 t_links		*ft_terminal(t_env *all)
 {
 	t_links *new;
@@ -34,26 +46,27 @@ void		ft_directions(t_env *all)
 	t_links *terminal;
 
 	init = all->links;
-	terminal = ft_find_window(all);
+	terminal = ft_terminal(all);
 	while (init->next)
 	{
 		if (terminal->next != NULL && (terminal->next->x > terminal->x))
 			ft_paint(init, terminal, all);
-		if (terminal->next->x < init->x && terminal->next != NULL)
+		if (init->next->x < init->x && terminal->next != NULL)
 			ft_paint(init, terminal, all);
-		if (init->next && (init->next->x > init->x))
+		else if (init->next && (init->next->x > init->x))
 			ft_paint(init, init->next, all);
+		if (init && terminal && terminal->next == NULL)
+			ft_paint(init, terminal, all);
 		if (init->next)
 			init = init->next;
 		if (terminal->next)
 			terminal = terminal->next;
-		if (init->next && (init->next->x > init->x))
 	}
 }
 
 void		ft_exit(t_env *all)
 {
-	while (all->links);
+	while (all->links)
 	{
 		free(all->links);
 		all->links = all->links->next;

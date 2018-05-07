@@ -6,73 +6,75 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/01 11:41:09 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/01 12:31:39 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/07 11:00:53 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_painting_x(t_links *init, t_links *terminal, t_env *all)
+#include "fdf.h"
+
+void	ft_paint_x(t_links *init, t_links *terminal, t_env *all)
 {
 	double e;
 	double x;
 	double y;
 	double slope;
 	
-	x = init->x;
-	y = init->y;
-	e = 2 * all->y = all->x;
-	slope = y < terminal->y ? 1 : -1;
-	while (x < terminal->x)
+	x = init->tru_x;
+	y = init->tru_y;
+	e = 2 * all->theda_y - all->theda_x;
+	slope = y < terminal->tru_y ? 1 : -1;
+	while (x < terminal->tru_x)
 	{
 		mlx_pixel_put(all->mlx, all->win, x, y, 0xFFFFFF);
 		if (e > 0)
 		{
 			y += slope;
-			e += 2 * (all->y - all->x);
+			e += 2 * (all->theda_y - all->theda_x);
 		}
 		else
-			e += 2 * all->y;
+			e += 2 * all->theda_y;
 		x++;
 	}
 }
 
-void	ft_painting_y(t_links *init, t_links *terminal, t_env *all)
+void	ft_paint_y(t_links *init, t_links *terminal, t_env *all)
 {
 	double e;
 	double x;
 	double y;
 	double slope;
 	
-	x = init->x;
-	y = init->y;
-	e = 2 * all->x = all->y;
-	slope = x < terminal->x ? 1 : -1;
-	while (y < terminal->y)
+	x = init->tru_x;
+	y = init->tru_y;
+	e = 2 * all->theda_x - all->theda_y;
+	slope = x < terminal->tru_x ? 1 : -1;
+	while (y < terminal->tru_y)
 	{
 		mlx_pixel_put(all->mlx, all->win, x, y, 0xFFFFFF);
 		if (e > 0)
 		{
+			e += 2 * (all->theda_x - all->theda_y);
 			x += slope;
-			e += 2 * (all->y - all->x);
 		}
 		else
-			e += 2 * all->x;
+			e += 2 * all->theda_x;
 		y++;
 	}
 }
 
 void	ft_paint(t_links *init, t_links *terminal, t_env *all)
 {
-	int		DrivingAxis;
+	int		da;
 	
-	all->x = fabs(terminal->x - init->x);
-	all->y = fabs(terminal->y - init->y);
-	DrivingAxis = all->da_x >= all->theda_y ? 1 : 0;
-	if (DrivingAxis > 0)
-	 	init->x <= terminal->x ?
-		ft_painting_x(init, terminal, all) :
-		ft_painting_x(termina, init, all);
-	else if (DrivingAxis == 0)
-		init->y <= terminal->y ?
-		ft_painting_y(init, terminal, all) :
-		ft_painting_y(terminal, init, all);
+	all->theda_x = fabs(terminal->tru_x - init->tru_x);
+	all->theda_y = fabs(terminal->tru_y - init->tru_y);
+	da = all->theda_x >= all->theda_y ? 1 : 0;
+	if (da > 0)
+	 	init->tru_x <= terminal->tru_x ?
+		ft_paint_x(init, terminal, all) :
+		ft_paint_x(terminal, init, all);
+	else if (da == 0)
+		init->tru_y <= terminal->tru_y ?
+		ft_paint_y(init, terminal, all) :
+		ft_paint_y(terminal, init, all);
 }

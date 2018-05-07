@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 15:35:15 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/07 09:10:01 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/07 09:37:06 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_tools		*ft_init_tools(void)
 		return (NULL);
 	LINE = NULL;
 	tools->i = 0;
-	shitmap = false;
+	SHITMAP = false;
 	XVAL = -1;
 	YVAL = 0;
 	tools->prev_x = 0;

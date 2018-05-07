@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 15:31:51 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/07 09:28:01 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/07 10:16:08 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <math.h>
-# include <stdbool.h>
 # include "libft/libft.h"
+# include <stdbool.h>
 
 typedef	struct		s_tools
 {
@@ -48,13 +48,12 @@ typedef	struct		s_tools
 	int				prev_y;
 }					t_tools;
 
-typedef struct		s_links
+typedef	struct		s_links
 {
-	struct	s_links	*next;
-	int				altitude;
+	struct s_links	*next;
 	int				x;
 	int				y;
-	int				alt;
+	int				altitude;
 	double			tru_y;
 	double			tru_x;
 }					t_links;
@@ -85,15 +84,15 @@ typedef struct		s_env
 	t_rot			*rot;
 	double			y_max;
 	double			x_max;
-	double			theda_y;
 	double			theda_x;
+	double			theda_y;
 	void			*mlx;
 	void			*win;
 	int				i;
 }					t_env;
 
 void	ft_killer(t_links *head, t_rot *rot, t_env *all);
-int   ft_parse(t_env *all, t_tools *tools, t_links *links);
+t_links   *ft_parse(t_env *all, t_tools *tools, t_links *links);
 int   ft_parse_the_map(t_env *all, t_tools *tools, t_links *links, int fd);
 int   ft_check_line(t_tools *tools);
 int   ft_create_list(t_links *start, t_tools *tools);
@@ -101,10 +100,10 @@ int		ft_add_link(t_links *new, t_tools *tools);
 t_links	*ft_create_link(t_tools *tools);
 void	ft_mlx_looper(t_env *all);
 void	ft_repeat(t_env *all);
-void	ft_painting_x(t_links *init, t_links *terminal, t_env *all);
-void	ft_painting_y(t_links *init, t_links *terminal, t_env *all);
-void	ft_paint(t_links *init, t_links *terminal, t_env *all);
-t_links		*ft_find_window(t_env *all);
+void				ft_paint_y(t_links *initial, t_links *terminal, t_env *all);
+void				ft_paint_x(t_links *initial, t_links *terminal, t_env *all);
+void				ft_paint(t_links *initial, t_links *terminal, t_env *all);
+t_links		*ft_terminal(t_env *all);
 void		ft_exit(t_env *all);
 void		ft_directions(t_env *all);
 int		ft_key_hook(int key, t_env *all);

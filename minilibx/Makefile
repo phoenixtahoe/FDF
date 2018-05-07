@@ -17,6 +17,4 @@ clean:
 	rm -f $(NOM) $(OBJ) *~
 	rm -f mlx_app
 
-re:
-	@$(MAKE) clean --no-print-directory
-	@$(MAKE) all --no-print-directory
+re: clean all
