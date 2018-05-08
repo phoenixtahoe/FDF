@@ -6,7 +6,7 @@
 #    By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/03 19:49:36 by pdavid            #+#    #+#              #
-#    Updated: 2018/04/03 19:56:03 by pdavid           ###   ########.fr        #
+#    Updated: 2018/05/08 14:34:21 by pdavid           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ header = fdf.h
 
 includes = ./libft/libft.a ./minilibx/libmlx.a
 
-SRC = main.c ft_init.c ft_killer.c ft_mlx.c ft_tools.c ft_links.c ft_paint.c
+SRC = main.c init.c rot.c mlx.c tools.c links.c paint.c
 
 OBJ = *.o
 

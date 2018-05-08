@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:30:25 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/07 19:37:29 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/08 11:55:48 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ int		main(int argc, char **argv)
 	int		fd;
 
 	all = ft_init();
+	if (argc < 2)
+		ft_putstr("ERROR: Enter somthing\n");
 	if (argc == 2)
 	{
 		fd = open(argv[1], O_RDONLY);

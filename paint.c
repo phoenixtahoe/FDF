@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/01 11:41:09 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/07 19:56:42 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/08 14:27:58 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_paint_x(t_links *init, t_links *terminal, t_env *all)
 	slope = y < terminal->tru_y ? 1 : -1;
 	while (x < terminal->tru_x)
 	{
-		mlx_pixel_put(all->mlx, all->win, x, y, 0xFFFFFF);
+		mlx_pixel_put(all->mlx, all->win, x, y, 0x0FFFFF);
 		if (e > 0)
 		{
 			y += slope;
@@ -50,7 +50,7 @@ void	ft_paint_y(t_links *init, t_links *terminal, t_env *all)
 	slope = x < terminal->tru_x ? 1 : -1;
 	while (y < terminal->tru_y)
 	{
-		mlx_pixel_put(all->mlx, all->win, x, y, 0xCFFFFF);
+		mlx_pixel_put(all->mlx, all->win, x, y, 0x0FF0000);
 		if (e > 0)
 		{
 			e += 2 * (all->theda_x - all->theda_y);
