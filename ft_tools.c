@@ -6,24 +6,11 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 16:37:01 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/07 11:40:02 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/07 19:40:09 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-t_links		*ft_create_link(t_tools *tools)
-{
-	t_links	*new;
-
-	if (!(new = (t_links *)malloc(sizeof(t_links))))
-		return (NULL);
-	new->x = XVAL;
-	new->y = YVAL;
-	new->altitude = ft_atoi(&(LINE[tools->i]));
-	new->next = NULL;
-	return (new);
-}
 
 t_links		*ft_terminal(t_env *all)
 {

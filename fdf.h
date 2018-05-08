@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 15:31:51 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/07 10:16:08 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/07 19:41:11 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FDF_H
 
 # define WIDTH 800
-# define HEIGHT 800
+# define HEIGHT 600
 # define XVAL tools->x
 # define YVAL tools->y
 # define LINE tools->line
