@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_paint.c                                         :+:      :+:    :+:   */
+/*   paint.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/01 11:41:09 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/08 14:27:58 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/08 16:07:54 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_paint_y(t_links *init, t_links *terminal, t_env *all)
 	slope = x < terminal->tru_x ? 1 : -1;
 	while (y < terminal->tru_y)
 	{
-		mlx_pixel_put(all->mlx, all->win, x, y, 0x0FF0000);
+		mlx_pixel_put(all->mlx, all->win, x, y, 0x0FFFFFF);
 		if (e > 0)
 		{
 			e += 2 * (all->theda_x - all->theda_y);

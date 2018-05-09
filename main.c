@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:30:25 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/08 11:55:48 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/08 16:16:19 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int   ft_parse_the_map(t_env *all, t_tools *tools, t_links *links, int fd)
       ft_parse_the_map(all, tools, links, fd);
     else
     {
-      ft_putstr("ERROR: BADMAP\n");
+      ft_putstr("ERROR: shit map\n");
       return (0);
     }
 	}
@@ -84,7 +84,7 @@ int		main(int argc, char **argv)
 
 	all = ft_init();
 	if (argc < 2)
-		ft_putstr("ERROR: Enter somthing\n");
+		ft_putstr("ERROR: No file\n");
 	if (argc == 2)
 	{
 		fd = open(argv[1], O_RDONLY);
