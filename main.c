@@ -6,37 +6,37 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:30:25 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/08 16:16:19 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/11 15:39:51 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int   ft_check_line(t_tools *tools)
+int			ft_check_line(t_tools *tools)
 {
-  int i;
+	int		i;
 
-  i = tools->i;
-  while (LINE[i])
-  {
-    if (ft_isdigit(LINE[i]) || LINE[i] == '-')
-      return (1);
-    i++;
-  }
-  return (-1);
+	i = tools->i;
+	while (LINE[i])
+	{
+		if (ft_isdigit(LINE[i]) || LINE[i] == '-')
+			return (1);
+		i++;
+	}
+	return (-1);
 }
 
-int   ft_create_list(t_links *start, t_tools *tools)
+int			ft_create_list(t_links *start, t_tools *tools)
 {
-  t_links *new;
+	t_links		*new;
 
-  new = start;
-  if (!ft_add_link(new, tools))
-    return (-1);
-  return (ft_check_line(tools) ? 1 : -1);
+	new = start;
+	if (!ft_add_link(new, tools))
+		return (-1);
+	return (ft_check_line(tools) ? 1 : -1);
 }
 
-t_links   *ft_parse(t_env *all, t_tools *tools, t_links *links)
+t_links		*ft_parse(t_env *all, t_tools *tools, t_links *links)
 {
 	XVAL++;
 	all->x_max = (double)XVAL;
@@ -56,31 +56,31 @@ t_links   *ft_parse(t_env *all, t_tools *tools, t_links *links)
 	return (ft_parse(all, tools, links));
 }
 
-int   ft_parse_the_map(t_env *all, t_tools *tools, t_links *links, int fd)
+int			ft_parse_the_map(t_env *all, t_tools *tools, t_links *links, int fd)
 {
-  YVAL++;
-  if (get_next_line(fd, &LINE) > 0)
+	YVAL++;
+	if (get_next_line(fd, &LINE) > 0)
 	{
-    XVAL = 0;
-    tools->i = 0;
-    ft_parse(all, tools, links);
-    free(LINE);
-    if (SHITMAP == false)
-      ft_parse_the_map(all, tools, links, fd);
-    else
-    {
-      ft_putstr("ERROR: shit map\n");
-      return (0);
-    }
+		XVAL = 0;
+		tools->i = 0;
+		ft_parse(all, tools, links);
+		free(LINE);
+		if (SHITMAP == false)
+			ft_parse_the_map(all, tools, links, fd);
+		else
+		{
+			ft_putstr("ERROR: shit map\n");
+			return (0);
+		}
 	}
-    all->y_max = (double)YVAL;
-    return (1);
+	all->y_max = (double)YVAL;
+	return (1);
 }
 
-int		main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
-	t_env	*all;
-	int		fd;
+	t_env		*all;
+	int			fd;
 
 	all = ft_init();
 	if (argc < 2)

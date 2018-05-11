@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/01 12:32:36 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/08 14:53:29 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/11 15:32:10 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_repeat(t_env *all)
 	mlx_clear_window(all->mlx, all->win);
 	ft_directions(all);
 }
-
 
 int		ft_key_hook(int key, t_env *all)
 {

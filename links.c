@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_links.c                                         :+:      :+:    :+:   */
+/*   links.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:31:57 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/07 19:39:34 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/11 15:42:04 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int		ft_add_link(t_links *new, t_tools *tools)
+int			ft_add_link(t_links *new, t_tools *tools)
 {
 	while (new->next != NULL)
 		new = new->next;

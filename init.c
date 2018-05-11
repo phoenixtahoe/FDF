@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init.c                                          :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 15:35:15 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/07 09:37:06 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/11 15:33:49 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_links		*ft_init_links(void)
 {
 	t_links	*links;
-	
+
 	links = (t_links *)malloc(sizeof(t_links));
 	links->x = -1;
 	links->y = -1;
@@ -29,7 +29,7 @@ t_links		*ft_init_links(void)
 t_tools		*ft_init_tools(void)
 {
 	t_tools	*tools;
-	
+
 	if (!(tools = (t_tools *)malloc(sizeof(t_tools))))
 		return (NULL);
 	LINE = NULL;
@@ -46,7 +46,7 @@ t_tools		*ft_init_tools(void)
 t_rot		*ft_init_rot(void)
 {
 	t_rot	*rot;
-	
+
 	rot = (t_rot *)malloc(sizeof(t_rot));
 	rot->degree_x = 0.0;
 	rot->radian_x = 0.0;
@@ -68,7 +68,7 @@ t_rot		*ft_init_rot(void)
 t_env		*ft_init(void)
 {
 	t_env *e;
-	
+
 	e = (t_env *)malloc(sizeof(t_env));
 	e->tools = ft_init_tools();
 	e->links = ft_init_links();
