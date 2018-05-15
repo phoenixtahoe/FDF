@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_killer.c                                        :+:      :+:    :+:   */
+/*   rot.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/03 18:54:59 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/04 19:12:59 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/14 14:56:24 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	ft_killer(t_links *head, t_rot *rot, t_env *all)
 	while (links)
 	{
 		rot->x0 = (double)links->x;
-		rot->y0 = ((links->y) * cos(rot->radian_x)) + (TRANS_Y);
-		rot->z0 = (links->altitude * cos(rot->radian_x)) - (TRANS_Z);
-		rot->x1 = (rot->x0 * cos(rot->radian_y)) - (rot->z0 * SIN_Y);
+		rot->y0 = ((links->y) * cos(rot->radian_x)) + links->altitude * sin(rot->radian_x);
+		rot->z0 = (links->altitude * cos(rot->radian_x)) - links->y * sin(rot->radian_x);
+		rot->x1 = (rot->x0 * cos(rot->radian_y)) - (rot->z0 * sin(rot->radian_y));
 		rot->y1 = rot->y0;
-		rot->z1 = (rot->z0 * cos(rot->radian_y)) + (rot->x0 * SIN_Y);
-		rot->x2 = (rot->x1 * cos(rot->radian_z)) + (rot->y1 * SIN_Z);
-		rot->y2 = (rot->y1 * cos(rot->radian_z)) - (rot->x1 * SIN_Z);
+		rot->z1 = (rot->z0 * cos(rot->radian_y)) + (rot->x0 * sin(rot->radian_z));
+		rot->x2 = (rot->x1 * cos(rot->radian_z)) + (rot->y1 * sin(rot->radian_z));
+		rot->y2 = (rot->y1 * cos(rot->radian_z)) - (rot->x1 * sin(rot->radian_z));
 		rot->x2 *= (WIDTH - 320) / all->x_max;
 		rot->y2 *= (HEIGHT - 300) / all->y_max;
 		rot->x2 += 150;

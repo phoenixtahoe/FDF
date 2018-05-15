@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:31:57 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/11 15:42:04 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/14 15:03:34 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ t_links		*ft_create_link(t_tools *tools)
 
 	if (!(new = (t_links *)malloc(sizeof(t_links))))
 		return (NULL);
-	new->x = XVAL;
-	new->y = YVAL;
-	new->altitude = ft_atoi(&(LINE[tools->i]));
+	new->x = tools->x;
+	new->y = tools->y;
+	new->altitude = ft_atoi(&(tools->line[tools->i]));
 	new->next = NULL;
 	return (new);
 }

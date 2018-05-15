@@ -6,7 +6,7 @@
 /*   By: pdavid <pdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 15:35:15 by pdavid            #+#    #+#             */
-/*   Updated: 2018/05/11 15:33:49 by pdavid           ###   ########.fr       */
+/*   Updated: 2018/05/14 14:52:55 by pdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ t_rot		*ft_init_rot(void)
 	t_rot	*rot;
 
 	rot = (t_rot *)malloc(sizeof(t_rot));
-	rot->degree_x = 0.0;
+	DX = 0.0;
+	DY = 0.0;
+	DZ = 0.0;
 	rot->radian_x = 0.0;
-	rot->degree_y = 0.0;
 	rot->radian_y = 0.0;
-	rot->degree_z = 0.0;
 	rot->radian_z = 0.0;
 	rot->x0 = 0.0;
 	rot->x1 = 0.0;
